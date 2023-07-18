@@ -6,16 +6,22 @@ const io = require('socket.io')(http,{cors:{"origin":[
   ],
   credentials: true,
 }});
-// const cors = require("cors");
-// app.use(express.json());
-//Serve static react app
 
-io.on("connection", (socket) => {
-    // console.log(socket)
-    console.log('A user connected');
-    // socket.emit("vishal",{desc:"vishal server"})
-    socket.broadcast.emit("sharma",{desc:"sharma server"})
-    // socket.on("sharma",(data)=>{console.log("FROM SHARMA : ",data)})
+io.on('connection', (socket) => {
+  console.log('User connected');
+  socket.on('message', (data) => {
+    socket.join(data.room);
+    console.log(`User joined room ${data.room}`);
+  });
+
+  // console.log(socket.id)
+  socket.on('message', (data) => {
+    io.to(data.room).emit('message', data);
+  });
+
+  socket.on('disconnect', () => {
+    console.log('User disconnected');
+  });
 });
 
 // setInterval(()=>{console.log(io.engine.clientsCount, io.of("/").sockets.size);
@@ -25,9 +31,9 @@ http.listen(5000, () => {
   console.log('listening on : 5000');
 });
 
-// const path=require("path");
+const path=require("path");
 
-// app.use(express.static('client/build'));
-//  app.get('*', (req, res) => {
-//         res.sendFile(path.resolve('client','build','index.html'));
-// });
+app.use(express.static('client/build'));
+ app.get('*', (req, res) => {
+        res.sendFile(path.resolve('client','build','index.html'));
+});

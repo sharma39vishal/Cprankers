@@ -1,23 +1,23 @@
-import logo from './logo.svg';
 import './App.css';
-import { io } from "socket.io-client";
-import {useEffect} from 'react'
-function App() {
-  var socket = io("http://localhost:5000");
-  
-  useEffect(() => {
-    // To take data
-    socket.on("vishal",(data)=>{console.log("DATA From Vishal backend",data)})
-    // To send data
-    // socket.emit("vishal",{desc:"vishal frontend"})
-    // socket.on("sharma",(data)=>{console.log("DATA From Sharma backend",data)})
-    // To send data
-    // socket.emit("sharma",{desc:"sharma frontend"})
-  }, [])
+import { Route, Routes,useLocation, useNavigate } from 'react-router-dom';
+import Home from './Pages/Home/Home';
+import Groups from './Pages/Groups/Groups';
+import Contest from './Pages/Contest/Contest';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
+function App() {  
   return (
     <div className="App">
-      <h4>SOCKET EMIT</h4>
+      <Header/>
+      <div className='complete-website'>
+    <Routes>
+        <Route exact path="/" element={<Home/>}/>
+        <Route exact path="/group/:groupId" element={<Groups/>}/>
+        <Route exact path="/contest" element={<Contest/>}/>
+    </Routes>
+    </div>
+    <Footer/>
     </div>
   );
 }
