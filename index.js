@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const http = require('http').Server(app);
+const PORT = process.env.PORT || 5000;
 const io = require('socket.io')(http,{cors:{"origin":[
     "http://localhost:3000",
   ],
@@ -27,8 +28,8 @@ io.on('connection', (socket) => {
 // setInterval(()=>{console.log(io.engine.clientsCount, io.of("/").sockets.size);
 // },2000)
 
-http.listen(5000, () => {
-  console.log('listening on : 5000');
+http.listen(PORT, () => {
+  console.log(`Server started on port: ${PORT}`);
 });
 
 const path=require("path");
