@@ -5,12 +5,16 @@ import './group.css'
 import RightMessage from './RightMessage';
 import LeftMessage from './LeftMessage';
 const socket = io.connect();
+// const socket = io.connect("http://localhost:5000/");
 
 const Groups = () => {
   const { groupId } = useParams();
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
 
+  useEffect(() => {
+    setMessages([])
+  }, [groupId])
   
   useEffect(() => {
     socket.on('message', (data) => {
