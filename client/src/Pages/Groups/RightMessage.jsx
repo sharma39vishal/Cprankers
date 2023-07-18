@@ -7,8 +7,9 @@ export default function RightMessage(props) {
         <div class="msg right-msg">
       <div
        class="msg-img"
-      //  style="background-image: url(https://image.flaticon.com/icons/svg/145/145867.svg)"
-      ></div>
+       >
+        <i class="fa-solid fa-user"></i>
+      </div>
 
       <div class="msg-bubble">
         <div class="msg-info">

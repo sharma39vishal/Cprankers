@@ -56,7 +56,7 @@ const Groups = () => {
       <span><i class="fas fa-cog"></i></span>
     </div>
   </header>
-
+<div className='max-chat-size'>
   <main class="msger-chat">
   {messages.map((message, index) => (
           <div class="msger-chat" key={index}>
@@ -67,7 +67,7 @@ const Groups = () => {
 
     
   </main>
-
+  </div>
   <form class="msger-inputarea" onSubmit={handleSubmit}>
   <input type="text"  class="msger-input" value={message} onChange={handleInputChange} />
         <button class="msger-send-btn" type="submit">Send</button>

@@ -6,9 +6,10 @@ export default function LeftMessage(props) {
          <div class="msg left-msg">
       <div
        class="msg-img"
-    //    style={{backgroundImage:"url(https://image.flaticon.com/icons/svg/327/327779.svg)"}}
-      //  style="background-image: url(https://image.flaticon.com/icons/svg/327/327779.svg)"
-      ></div>
+        >
+        <i  class="fa-solid fa-user"></i>
+
+        </div>
 
       <div class="msg-bubble">
         <div class="msg-info">
