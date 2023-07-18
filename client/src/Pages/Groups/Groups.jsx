@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import './group.css'
 import RightMessage from './RightMessage';
 import LeftMessage from './LeftMessage';
-const socket = io.connect('http://localhost:5000');
+const socket = io.connect();
 
 const Groups = () => {
   const { groupId } = useParams();
