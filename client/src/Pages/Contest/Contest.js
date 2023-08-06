@@ -19,7 +19,7 @@ export default function Contest() {
       
 
   return (
-    <div>
+    <div className='documentation-container'>
       <h1>Contests</h1>
       <div>
         

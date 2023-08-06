@@ -57,6 +57,11 @@ export default function Header() {
               </li>
             </ul>
           </li>
+          <li className="nav-item">
+            <a className="nav-link"  style={{cursor:"pointer"}} onClick={()=>{navigate("/mailsender")}}>
+              Mail Sender
+            </a>
+          </li>
         </ul>
       </div>
     </div>

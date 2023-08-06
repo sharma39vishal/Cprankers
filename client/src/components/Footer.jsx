@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
+import './footer.css';
 
-export default function Footer() {
+const Footer = () => {
   return (
     <div className='footer'>
-        <p>Developed by #Vishal Sharma</p>
+      <p>Developed by <a href='https://www.linkedin.com/in/sharma39vishal/' target='_blank' rel='noopener noreferrer'>Vishal Sharma</a></p>
     </div>
-  )
-}
+  );
+};
+
+export default Footer;

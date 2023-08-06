@@ -19,6 +19,7 @@ export default function RightMessage(props) {
 
         <div class="msg-text">
         {props.message}
+        {/* <div key={url} className="my-4 mx-4"> <a href={url} style={{color:"white"}}><p >{i++}) {url}</p></a></div> */}
         </div>
       </div>
     </div>

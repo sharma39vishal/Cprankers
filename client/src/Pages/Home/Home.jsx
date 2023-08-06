@@ -17,8 +17,8 @@ export default function Home() {
           <div>Developer Discussion</div>
           <div>DSAlgo Discussion</div>
           <div>Guidance</div>
-          <div>CodeChef</div>
-          <div>Codeforces</div>
+          <div>Mail</div>
+          <div>API</div>
         </div>
       </div>
     </>

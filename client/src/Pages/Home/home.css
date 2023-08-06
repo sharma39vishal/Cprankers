@@ -10,8 +10,8 @@
    font-family: 'Poppins', sans-serif;
 	 align-items: center;
 	 justify-content: center;
-  background-color: #fff;
-   /*color: #fff;*/
+  /* background-color: #fff; */
+   /* color: #fff; */
 }
  span {
 	 background: linear-gradient(to right, #bf0f93 0%, #f4711f 100%);

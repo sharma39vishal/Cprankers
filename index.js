@@ -19,6 +19,7 @@ io.on('connection', (socket) => {
 
   // console.log(socket.id)
   socket.on('message', (data) => {
+    //  console.log(data.room,data)
     io.to(data.room).emit('message', data);
   });
 
@@ -34,7 +35,15 @@ http.listen(PORT, () => {
   console.log(`Server started on port: ${PORT}`);
 });
 
+app.use("/mail", require("./Routes/MailSender"));
+
 const path=require("path");
+
+app.use((req, res, next) => {
+  const clientIp = req.ip; // Get the user's IP address from the request
+  console.log(`User IP: ${clientIp}`);
+  next(); // Call the next middleware in the chain
+});
 
 app.use(express.static('client/build'));
  app.get('*', (req, res) => {

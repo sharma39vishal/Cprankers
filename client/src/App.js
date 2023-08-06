@@ -5,6 +5,7 @@ import Groups from './Pages/Groups/Groups';
 import Contest from './Pages/Contest/Contest';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import MailSender from './Pages/MailSender/MailSender';
 
 function App() {  
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/group/:groupId" element={<Groups/>}/>
         <Route exact path="/contest" element={<Contest/>}/>
+        <Route exact path="/mailsender" element={<MailSender/>}/>
     </Routes>
     </div>
     <Footer/>

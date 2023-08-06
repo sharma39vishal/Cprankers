@@ -11,7 +11,7 @@ const Groups = () => {
   const { groupId } = useParams();
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-
+  const [fileupload,setfileupload]=useState(null);
   useEffect(() => {
     setMessages([])
   }, [groupId])
@@ -30,6 +30,12 @@ const Groups = () => {
     setMessage(event.target.value);
   };
 
+  const handleFileChange = (event) => {
+    setMessage(event.target.value);
+    setfileupload(null);
+  };
+
+
   const handleSubmit = (event) => {
     event.preventDefault();
     // console.log(socket.id)
@@ -37,11 +43,13 @@ const Groups = () => {
       const data = {
         room: groupId,
         text: message,
+        file: fileupload,
         user: socket.id,
         date: new Date()
       };
       socket.emit('message', data);
       setMessage('');
+    setfileupload(null);
     }
   };
 
@@ -59,21 +67,20 @@ const Groups = () => {
 <div className='max-chat-size'>
   <main class="msger-chat">
   {messages.map((message, index) => (
-          <div class="msger-chat" key={index}>
-            {message.user===socket.id?<RightMessage message={message.text} date={message.date} />:<LeftMessage message={message.text} date={message.date}/>}
-             {/* <span>{message.text}</span> */}
-          </div>
+        <div class="msger-chat" key={index}>
+          {message.user===socket.id?<RightMessage message={message.text} date={message.date} file={message.file}/>:<LeftMessage message={message.text} date={message.date} file={message.file}/>}
+            {/* <span>{message.text}</span> */}
+        </div>
   ))}
-
-    
   </main>
   </div>
-  <form class="msger-inputarea" onSubmit={handleSubmit}>
+  <div class="msger-inputarea">
+  <input type="file" className='btn btn-secondary mx-4 my-4'  onChange={(event)=>{setfileupload(event.target.files[0]); setMessage(event.target.files[0].name); }} />
   <input type="text"  class="msger-input" value={message} onChange={handleInputChange} />
-        <button class="msger-send-btn" type="submit">Send</button>
-  </form>
-</section>
+        <button class="msger-send-btn" type="submit" onClick={handleSubmit}>Send</button>
+  </div>
 
+</section>
      
     </div>
   );
