@@ -40,8 +40,10 @@ app.use("/mail", require("./Routes/MailSender"));
 const path=require("path");
 
 app.use((req, res, next) => {
-  const clientIp = req.ip; // Get the user's IP address from the request
-  console.log(`User IP: ${clientIp}`);
+  const clientIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+  console.log(req.headers['x-forwarded-for'], " : ",req.connection.remoteAddress," , ",`User IP: ${clientIp}`)
+  // const clientIp = req.ip; // Get the user's IP address from the request
+  // console.log(`User IP: ${clientIp}`);
   next(); // Call the next middleware in the chain
 });
 
