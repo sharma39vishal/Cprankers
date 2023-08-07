@@ -57,7 +57,7 @@ const Groups = () => {
     <div>
       <div id="container">
         <div className="msger-header-title">
-          <h1>
+          <h1 style={{fontSize:"2rem"}}>
             <i className="fas fa-comment-alt"></i> {groupId} Group
           </h1>
         </div>
@@ -78,8 +78,10 @@ const Groups = () => {
             <input id='input-file' type='file'  onChange={(event)=>{setfileupload(event.target.files[0]); setMessage(event.target.files[0].name); }} />
           </div>
           {/* <input type="file" className='btn btn-secondary mx-4 my-4'  onChange={(event)=>{setfileupload(event.target.files[0]); setMessage(event.target.files[0].name); }} /> */}
+          <div className='only-field'>
           <input type="text" className="msger-input" value={message} onChange={handleInputChange} />
           <button className="msger-send-btn" type="submit" onClick={handleSubmit}>Send</button>
+          </div>
         </div>
       </div>
 

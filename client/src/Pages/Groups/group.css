@@ -370,7 +370,7 @@ div{
   height: 3rem;
   width: 70%;
   position: absolute;
-  bottom: -22%;
+  bottom: -13%;
 }
 
 
@@ -451,4 +451,16 @@ div{
 
 .file--uploading > label:active {
   background-color: hsl(48, 100%, 91%);
+}
+
+.only-field{
+  display: flex;
+  width: 100%;
+  height: 3rem;
+}
+@media only screen and (max-width: 600px) {
+  .msger-inputarea{
+    display: flex;
+    flex-direction: column;
+  }
 }
