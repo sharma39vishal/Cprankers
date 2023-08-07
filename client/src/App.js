@@ -19,7 +19,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <div className='complete-website'>
+      <div className='complete-website' >
     <Routes>
         <Route exact path="/" element={<Home/>}/>
         <Route exact path="/group/:groupId" element={<Groups/>}/>

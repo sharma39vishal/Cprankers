@@ -6,9 +6,9 @@ export default function RightMessage(props) {
     <li className="message mine">
     <div className="picture">(-:</div>
     <div className="contents">
-      <div class="msg-info">
-          <div class="msg-info-name">Anonymous</div>
-          <div class="msg-info-time">{moment.utc(props.date).local().startOf('seconds').fromNow()}</div>
+      <div className="msg-info">
+          <div className="msg-info-name">Anonymous</div>
+          <div className="msg-info-time">{moment.utc(props.date).local().startOf('seconds').fromNow()}</div>
         </div>
         {props.message}
     </div>
@@ -16,20 +16,20 @@ export default function RightMessage(props) {
   )
 }
 
-    //     <div class="msg right-msg">
+    //     <div className="msg right-msg">
     //   <div
-    //    class="msg-img"
+    //    className="msg-img"
     //    >
-    //     <i class="fa-solid fa-user"></i>
+    //     <i className="fa-solid fa-user"></i>
     //   </div>
 
-    //   <div class="msg-bubble">
-        // <div class="msg-info">
-        //   <div class="msg-info-name">You</div>
-        //   <div class="msg-info-time">{moment.utc(props.date).local().startOf('seconds').fromNow()}</div>
+    //   <div className="msg-bubble">
+        // <div className="msg-info">
+        //   <div className="msg-info-name">You</div>
+        //   <div className="msg-info-time">{moment.utc(props.date).local().startOf('seconds').fromNow()}</div>
         // </div>
 
-    //     <div class="msg-text">
+    //     <div className="msg-text">
     //     {props.message}
     //     {/* <div key={url} className="my-4 mx-4"> <a href={url} style={{color:"white"}}><p >{i++}) {url}</p></a></div> */}
     //     </div>

@@ -56,9 +56,9 @@ const Groups = () => {
   return (
     <div>
       <div id="container">
-        <div class="msger-header-title">
+        <div className="msger-header-title">
           <h1>
-            <i class="fas fa-comment-alt"></i> {groupId} Group
+            <i className="fas fa-comment-alt"></i> {groupId} Group
           </h1>
         </div>
         <ul>
@@ -70,16 +70,16 @@ const Groups = () => {
         </ul>
 
 
-        <div class="msger-inputarea bottom-input">
-          <div class='file file--uploading'>
-            <label for='input-file'>
-              <i class="fa-solid fa-cloud-arrow-up"></i>Uploading
+        <div className="msger-inputarea bottom-input">
+          <div className='file file--uploading'>
+            <label htmlFor='input-file'>
+              <i className="fa-solid fa-cloud-arrow-up"></i>Uploading
             </label>
             <input id='input-file' type='file'  onChange={(event)=>{setfileupload(event.target.files[0]); setMessage(event.target.files[0].name); }} />
           </div>
           {/* <input type="file" className='btn btn-secondary mx-4 my-4'  onChange={(event)=>{setfileupload(event.target.files[0]); setMessage(event.target.files[0].name); }} /> */}
-          <input type="text" class="msger-input" value={message} onChange={handleInputChange} />
-          <button class="msger-send-btn" type="submit" onClick={handleSubmit}>Send</button>
+          <input type="text" className="msger-input" value={message} onChange={handleInputChange} />
+          <button className="msger-send-btn" type="submit" onClick={handleSubmit}>Send</button>
         </div>
       </div>
 

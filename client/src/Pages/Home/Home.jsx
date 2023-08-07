@@ -5,7 +5,7 @@ export default function Home() {
     <div className='body-box'><>
       <div className='full-section'>
         <header>CP-Rankers</header>
-        <h3 class="claim">The <span>Way</span> to do Coding.</h3>
+        <h3 className="claim">The <span>Way</span> to do Coding.</h3>
         <h4 className="desc">
           "Unleash your coding prowess, craft digital wonders, and shape the future. <br /> Embrace innovation, empower creativity, and conquer the world of code."
         </h4>
