@@ -11,11 +11,11 @@ const Groups = () => {
   const { groupId } = useParams();
   const [message, setMessage] = useState('');
   const [messages, setMessages] = useState([]);
-  const [fileupload,setfileupload]=useState(null);
+  const [fileupload, setfileupload] = useState(null);
   useEffect(() => {
     setMessages([])
   }, [groupId])
-  
+
   useEffect(() => {
     socket.on('message', (data) => {
       console.log(data)
@@ -49,39 +49,40 @@ const Groups = () => {
       };
       socket.emit('message', data);
       setMessage('');
-    setfileupload(null);
+      setfileupload(null);
     }
   };
 
   return (
     <div>
-      <section class="msger">
-  <header class="msger-header">
-    <div class="msger-header-title">
-      <i class="fas fa-comment-alt"></i> {groupId} Discussion
-    </div>
-    <div class="msger-header-options">
-      <span><i class="fas fa-cog"></i></span>
-    </div>
-  </header>
-<div className='max-chat-size'>
-  <main class="msger-chat">
-  {messages.map((message, index) => (
-        <div class="msger-chat" key={index}>
-          {message.user===socket.id?<RightMessage message={message.text} date={message.date} file={message.file}/>:<LeftMessage message={message.text} date={message.date} file={message.file}/>}
-            {/* <span>{message.text}</span> */}
+      <div id="container">
+        <div class="msger-header-title">
+          <h1>
+            <i class="fas fa-comment-alt"></i> {groupId} Group
+          </h1>
         </div>
-  ))}
-  </main>
-  </div>
-  <div class="msger-inputarea">
-  <input type="file" className='btn btn-secondary mx-4 my-4'  onChange={(event)=>{setfileupload(event.target.files[0]); setMessage(event.target.files[0].name); }} />
-  <input type="text"  class="msger-input" value={message} onChange={handleInputChange} />
-        <button class="msger-send-btn" type="submit" onClick={handleSubmit}>Send</button>
-  </div>
+        <ul>
+          {messages.map((message, index) => (
+             <>
+              {message.user === socket.id ? <RightMessage message={message.text} date={message.date} file={message.file} /> : <LeftMessage message={message.text} date={message.date} file={message.file} />}
+            </>
+          ))}
+        </ul>
 
-</section>
-     
+
+        <div class="msger-inputarea bottom-input">
+          <div class='file file--uploading'>
+            <label for='input-file'>
+              <i class="fa-solid fa-cloud-arrow-up"></i>Uploading
+            </label>
+            <input id='input-file' type='file'  onChange={(event)=>{setfileupload(event.target.files[0]); setMessage(event.target.files[0].name); }} />
+          </div>
+          {/* <input type="file" className='btn btn-secondary mx-4 my-4'  onChange={(event)=>{setfileupload(event.target.files[0]); setMessage(event.target.files[0].name); }} /> */}
+          <input type="text" class="msger-input" value={message} onChange={handleInputChange} />
+          <button class="msger-send-btn" type="submit" onClick={handleSubmit}>Send</button>
+        </div>
+      </div>
+
     </div>
   );
 };

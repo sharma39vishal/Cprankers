@@ -99,6 +99,12 @@ body, h1, h2, p {
   .documentation-container {
     animation: fadeIn 1s ease;
   }
+
+  .documentation-container{
+    animation: none;
+    margin: 10%;
+    padding: 0%;
+  }
   
   .endpoint, .response {
     animation: slideInUp 1s ease;

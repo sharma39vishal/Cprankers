@@ -21,27 +21,44 @@ export default function LeftMessage(props) {
     }
   };
   return (
-         <div class="msg left-msg">
-      <div
-       class="msg-img"
-        >
-        <i  class="fa-solid fa-user"></i>
-
-        </div>
-
-      <div class="msg-bubble">
-        <div class="msg-info">
-          <div class="msg-info-name">Anonymous</div>
+    <li className="message">
+    <div className="picture">:-)</div>
+    <div className="contents">
+    <div class="msg-info">
+          <div class="msg-info-name">You</div>
           <div class="msg-info-time">{moment.utc(props.date).local().startOf('seconds').fromNow()}</div>
         </div>
+       
+        {props.message}
+        
+        {props.file ?<button className='download-msg-file' style={{cursor:"pointer"}} onClick={handleDownload} disabled={!fileData}>
+         Download File
+       </button>:null}
 
-        <div class="msg-text">
-            {props.message}
-            <button onClick={handleDownload} disabled={!fileData}>
-        Download File
-      </button>
-        </div>
-      </div>
     </div>
+    </li>
   )
 }
+
+    //      <div class="msg left-msg">
+    //   <div
+    //    class="msg-img"
+    //     >
+    //     <i  class="fa-solid fa-user"></i>
+
+    //     </div>
+
+    //   <div class="msg-bubble">
+    //     <div class="msg-info">
+    //       <div class="msg-info-name">Anonymous</div>
+    //       <div class="msg-info-time">{moment.utc(props.date).local().startOf('seconds').fromNow()}</div>
+    //     </div>
+
+    //     <div class="msg-text">
+    //         {props.message}
+    //         <button onClick={handleDownload} disabled={!fileData}>
+    //     Download File
+    //   </button>
+    //     </div>
+    //   </div>
+    // </div>

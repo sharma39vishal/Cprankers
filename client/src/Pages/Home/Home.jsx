@@ -12,13 +12,13 @@ export default function Home() {
       </div>
       <div className='full-section'>
         <h1 style={{ margin: "20px" }}>Extra Ordinary Features</h1>
-        <div className="container" style={{ margin: "40px" }}>
-          <div>Contest Alert</div>
-          <div>Developer Discussion</div>
-          <div>DSAlgo Discussion</div>
-          <div>Guidance</div>
-          <div>Mail</div>
-          <div>API</div>
+        <div className="feature-box" style={{ margin: "40px" }}>
+          <div className='single-home-feature'>Contest Alert</div>
+          <div className='single-home-feature'>Developer Discussion</div>
+          <div className='single-home-feature'>DSAlgo Discussion</div>
+          <div className='single-home-feature'>MERN STACK</div>
+          <div className='single-home-feature'>Mail API</div>
+          <div className='single-home-feature'>DEVELOPMENT</div>
         </div>
       </div>
     </>
