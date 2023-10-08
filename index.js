@@ -35,6 +35,9 @@ http.listen(PORT, () => {
   console.log(`Server started on port: ${PORT}`);
 });
 
+app.get("/test",(req,res)=>{
+  res.send("Testing")
+})
 app.use("/mail", require("./Routes/MailSender"));
 
 const path=require("path");
@@ -51,3 +54,5 @@ app.use(express.static('client/build'));
  app.get('*', (req, res) => {
         res.sendFile(path.resolve('client','build','index.html'));
 });
+
+module.exports = app
