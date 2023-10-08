@@ -4,7 +4,8 @@ import { useParams } from 'react-router-dom';
 import './group.css'
 import RightMessage from './RightMessage';
 import LeftMessage from './LeftMessage';
-const socket = io.connect("https://cprankers.vercel.app/");
+// const socket = io.connect("https://cprankers.vercel.app/");
+const socket = io.connect();
 // const socket = io.connect("http://localhost:5000/");
 
 const Groups = () => {

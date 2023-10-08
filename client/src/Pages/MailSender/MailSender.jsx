@@ -31,7 +31,7 @@ const MailSender = () => {
       </div>
 
       <div className="endpoint">
-        <div className="endpoint-title">POST https://cprankers.vercel.app/mailsender/{'{'}API_KEY{'}'}</div>
+        <div className="endpoint-title">POST /mailsender/{'{'}API_KEY{'}'}</div>
         <div className="endpoint-description">
           This API is used to send an email using an API key for authentication.
         </div>

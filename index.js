@@ -4,12 +4,12 @@ const http = require('http').Server(app);
 const PORT = process.env.PORT || 5000;
 
 const io = require('socket.io')(http
-  ,{cors:{"origin":[
-    "http://localhost:3000",
-    "https://cprankers.netlify.app"
-  ],
-  credentials: true,
-}}
+//   ,{cors:{"origin":[
+//     "http://localhost:3000",
+//     "https://cprankers.netlify.app"
+//   ],
+//   credentials: true,
+// }}
 );
 
 io.on('connection', (socket) => {
@@ -56,5 +56,3 @@ app.use(express.static('client/build'));
  app.get('*', (req, res) => {
         res.sendFile(path.resolve('client','build','index.html'));
 });
-
-module.exports = app
